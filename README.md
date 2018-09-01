@@ -1,82 +1,88 @@
-# textmodel
+# TextModel
 TextModel is a Python class that determines the author of a given piece of text by using dictionaries.
 
 ### Prerequisites
 
 You must have at least Python 3 installed. If you do not, you can download the latest [version](https://www.python.org/downloads/release/python-370/).
 
-```
-Give examples
-```
+You also need access to the command line such as Terminal for Mac OS or Command Prompt for Windows
+or an Python IDE capable of running Python 3.
 
-### Installing
+---
 
-A step by step series of examples that tell you how to get a development env running
+### How to Use
+The follow instructions assume you are using the Python 3 Shell. For Terminal or Command Prompt isntructions, please refer to Python's instructions on running programs.
 
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
+In order for TextModel to determine the author of arbitrary text, you must upload examples of their work from the author as text files. 
 
 ```
-until finished
+author_name = TextModel("Author Name")
+author_name.add_file('author_source_text.txt')
 ```
 
-End with an example of getting some data out of the system or using it for a little demo
+Now, create a TextModel for the arbitrary text, and run it's classify() method. The parameters are any choice of two TextModel authors you previously created.
+
+```
+arbitrary_text = TextModel("Arbitrary Text")
+arbitrary_text.add_file('arbitrarytext_source_text.txt')
+
+arbitrary_text.classify(author_name1, author_name2)
+```
+
+The program will then print the similarity scores calculated by the arbitrary's TextModel for the given authors' TextModel respectively, and print out the determined author of arbitrary text.
+
+---
 
 ## Running the tests
+When using thr Terminal, make sure you are not in the directory where finalproject.py is in. The directories are in this order: project > source_texts. project should contain both textmodel.py and the directory source_texts, and source_texts should contain all the text files.
 
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
+In the Terminal or Command Prompt, you can run the tests as such:
 
 ```
-Give an example
+python3 -c "import project.textmodel; project.textmodel.run_tests()"
 ```
 
-### And coding style tests
+### Explanation of the tests
 
-Explain what these tests test and why
+#### Test 1: Determining the author of Barack Obama's speech.
 
 ```
-Give an example
+scores for Barack Obama : [-27144.08, -40555.6, -27172.42, -877.56, 1284.6]
+scores for Donald Trump : [-27651.06, -40136.96, -27610.36, -892.13, 1284.6]
+More Obama is more likely to have come from  Barack Obama
 ```
 
-## Deployment
+#### Test 2: Determining the author of Donald Trumps's speech.
 
-Add additional notes about how to deploy this on a live system
+```
+scores for Barack Obama : [-31056.96, -45873.88, -30738.95, -1005.24, 1284.6]
+scores for Donald Trump : [-30743.24, -45400.34, -30626.4, -988.69, 1284.6]
+More Trump is more likely to have come from  Donald Trump
+```
 
-## Built With
+#### Test 3: Determining the author of Gucci Gang by Lil Pump.
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+```
+scores for Barack Obama : [-3278.94, -3733.69, -3284.3, -45.95, 1284.6]
+scores for Donald Trump : [-3243.05, -3695.15, -3197.95, -49.21, 1284.6]
+Gucci Gang by Lil Pump is more likely to have come from  Donald Trump
+```
 
-## Contributing
+#### Test 4: Determining the author of Spongebob Squarepants Episode 1 Season 1 transcript.
 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+```
+scores for Barack Obama : [-34500.67, -45933.3, -34118.91, -2885.08, 1284.6]
+scores for Donald Trump : [-34371.77, -45459.15, -33865.09, -2609.06, 1284.6]
+Spongebob Transcripts is more likely to have come from  Donald Trump
+```
 
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+---
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+* **Azaria Fowler** - *Original Author* - fowler.azaria@gmail.com
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
 ## Acknowledgments
 
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+* This project was assigned to me by Dr. Dave Sullivan at Boston University.
