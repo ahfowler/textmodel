@@ -319,8 +319,10 @@ def compare_lists(l1, l2):
     return score
 
 
-def run_tests():
+def run():
     """ This compares texts to Barack Obama and Donald Trump. """
+    
+    """ Loading of Barack Obama and Donald Trump texts """
     source1 = TextModel("Barack Obama")
     source1.add_file('source_texts/barackobama_source_text.txt')
 
@@ -334,7 +336,8 @@ def run_tests():
     new2 = TextModel('More Trump')
     new2.add_file('source_texts/moretrump_source_text.txt')
     new2.classify(source1, source2)
-
+    
+    """ Comparing Lil Pump and Spongebob to Barack Obama and Donald Trump """
     new1 = TextModel('Gucci Gang by Lil Pump')
     new1.add_file('source_texts/guccigang_source_text.txt')
     new1.classify(source1, source2)
