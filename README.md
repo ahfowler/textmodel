@@ -34,7 +34,7 @@ The program will then print the similarity scores calculated by the arbitrary's 
 ---
 
 ## Running the tests
-When using thr Terminal, make sure you are not in the directory where finalproject.py is in. The directories are in this order: project > source_texts. project should contain both textmodel.py and the directory source_texts, and source_texts should contain all the text files.
+When using the Terminal, make sure you are not in the directory where finalproject.py is in. The directories are in this order: project > source_texts. project should contain both textmodel.py and the directory source_texts, and source_texts should contain all the text files.
 
 In the Terminal or Command Prompt, you can run the tests as such:
 
