@@ -319,29 +319,26 @@ def compare_lists(l1, l2):
     return score
 
 
-def run():
+def run_tests():
     """ This compares texts to Barack Obama and Donald Trump. """
-    
-    """ Loading of Barack Obama and Donald Trump texts """
     source1 = TextModel("Barack Obama")
-    source1.add_file('source_texts/barackobama_source_text.txt')
+    source1.add_file('project/source_texts/barackobama_source_text.txt')
 
     source2 = TextModel('Donald Trump')
-    source2.add_file('source_texts/donaldtrump_source_text.txt')
+    source2.add_file('project/source_texts/donaldtrump_source_text.txt')
 
     new1 = TextModel('More Obama')
-    new1.add_file('source_texts/moreobama_source_text.txt')
+    new1.add_file('project/source_texts/moreobama_source_text.txt')
     new1.classify(source1, source2)
 
     new2 = TextModel('More Trump')
-    new2.add_file('source_texts/moretrump_source_text.txt')
+    new2.add_file('project/source_texts/moretrump_source_text.txt')
     new2.classify(source1, source2)
-    
-    """ Comparing Lil Pump and Spongebob to Barack Obama and Donald Trump """
+
     new1 = TextModel('Gucci Gang by Lil Pump')
-    new1.add_file('source_texts/guccigang_source_text.txt')
+    new1.add_file('project/source_texts/guccigang_source_text.txt')
     new1.classify(source1, source2)
 
     new1 = TextModel("Spongebob Transcripts")
-    new1.add_file('source_texts/spongebobeps_source_text.txt')
+    new1.add_file('project/source_texts/spongebobeps_source_text.txt')
     new1.classify(source1, source2)
