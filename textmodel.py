@@ -173,7 +173,7 @@ class TextModel:
 
     def add_file(self, filename):
         """ Adds all text of a file. """
-        f = open(source_texts/filename, 'r', encoding='utf8', errors='ignore')
+        f = open(filename, 'r', encoding='utf8', errors='ignore')
         text = f.read()
         f.close()
         
@@ -275,8 +275,6 @@ class TextModel:
         s1 = 0
         s2 = 0
         for x in range(len(scores1)):
-            print(s1)
-            print(s2)
             if scores1[x] >= scores2[x]:
                 s1 += 1
             else:
@@ -284,8 +282,10 @@ class TextModel:
         
         if s1 > s2:
             print(self.name, "is more likely to have come from ", source1.name)
+            print()
         else:
             print(self.name, "is more likely to have come from ", source2.name)
+            print()
         
 
                 
@@ -322,23 +322,23 @@ def compare_lists(l1, l2):
 def run_tests():
     """ This compares texts to Barack Obama and Donald Trump. """
     source1 = TextModel("Barack Obama")
-    source1.add_file('barackobama_source_text.txt')
+    source1.add_file('source_texts/barackobama_source_text.txt')
 
     source2 = TextModel('Donald Trump')
-    source2.add_file('donaldtrump_source_text.txt')
+    source2.add_file('source_texts/donaldtrump_source_text.txt')
 
     new1 = TextModel('More Obama')
-    new1.add_file('moreobama_source_text.txt')
+    new1.add_file('source_texts/moreobama_source_text.txt')
     new1.classify(source1, source2)
 
     new2 = TextModel('More Trump')
-    new2.add_file('moretrump_source_text.txt')
+    new2.add_file('source_texts/moretrump_source_text.txt')
     new2.classify(source1, source2)
 
     new1 = TextModel('Gucci Gang by Lil Pump')
-    new1.add_file('guccigang_source_text.txt')
+    new1.add_file('source_texts/guccigang_source_text.txt')
     new1.classify(source1, source2)
 
     new1 = TextModel("Spongebob Transcripts")
-    new1.add_file('spongebobeps_source_text.txt')
+    new1.add_file('source_texts/spongebobeps_source_text.txt')
     new1.classify(source1, source2)
