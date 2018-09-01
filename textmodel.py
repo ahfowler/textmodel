@@ -173,7 +173,7 @@ class TextModel:
 
     def add_file(self, filename):
         """ Adds all text of a file. """
-        f = open(filename, 'r', encoding='utf8', errors='ignore')
+        f = open(source_texts/filename, 'r', encoding='utf8', errors='ignore')
         text = f.read()
         f.close()
         
